@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume</title>
+
+    <style>
+        body {
+            background-color: #b2dfdb;
+            font-family: monospace;
+            margin: 0;
+            padding: 20px 0;
+            color: #222;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .resume {
+            position: relative;
+            background-color: white;
+            color: #222;
+            width: 85%;
+            margin: auto;
+            padding: 25px;
+            border: 2px solid #008577;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .top-controls {
+            width: 85%;
+            margin: 0 auto 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        button {
+            background-color: #008577;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #005f56;
+        }
+
+        /* Name and profile photo */
+        .resume-header {
+            position: relative;
+            min-height: 155px;
+            padding-right: 155px;
+        }
+
+        .resume-header h1 {
+            color: #00695c;
+            text-align: left;
+            margin: 20px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .profile-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 125px;
+            text-align: center;
+        }
+
+        #profileImage {
+            display: block;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #008577;
+            box-sizing: border-box;
+            margin-bottom: 8px;
+        }
+
+        #profileToggle {
+            width: 125px;
+            padding: 7px 4px;
+            font-size: 11px;
+        }
+
+        h2 {
+            color: #00796b;
+            background-color: #d0f0eb;
+            padding: 8px;
+        }
+
+        p, li {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #008577;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #008577;
+            color: white;
+        }
+
+        a {
+            color: #00796b;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            text-align: center;
+            color: #00695c;
+        }
+
+        #clickCount {
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 12px;
+            background-color: #d0f0eb;
+            border-radius: 8px;
+        }
+
+        /* Dark mode */
+        body.dark-mode {
+            background-color: #121212;
+            color: #f5f5f5;
+        }
+
+        body.dark-mode .resume {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            border-color: #26a69a;
+        }
+
+        body.dark-mode .resume-header h1,
+        body.dark-mode footer {
+            color: #80cbc4;
+        }
+
+        body.dark-mode h2,
+        body.dark-mode #clickCount {
+            background-color: #263b39;
+            color: #80cbc4;
+        }
+
+        body.dark-mode a {
+            color: #80cbc4;
+        }
+
+        body.dark-mode th {
+            background-color: #00695c;
+        }
+
+        body.dark-mode th,
+        body.dark-mode td {
+            border-color: #26a69a;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px 0;
+            }
+
+            .resume,
+            .top-controls {
+                width: 95%;
+            }
+
+            .resume {
+                padding: 15px;
+            }
+
+            .resume-header {
+                min-height: 155px;
+                padding-right: 0;
+                padding-top: 145px;
+            }
+
+            .resume-header h1 {
+                font-size: 22px;
+            }
+
+            .profile-box {
+                top: 0;
+                right: 0;
+                left: 0;
+                margin: auto;
+            }
+
+            th, td {
+                padding: 5px;
+                font-size: 12px;
+                overflow-wrap: anywhere;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Buttons above the resume -->
+    <div class="top-controls">
+        <button id="themeToggle" onclick="toggleTheme()">
+             Dark Mode
+        </button>
+
+        <button onclick="countClick()">
+            download 
+        </button>
+    </div>
+
+    <div class="resume">
+
+        <!-- Name and profile image -->
+        <div class="resume-header">
+            <h1>SIVAPRAKASH M</h1>
+
+            <div class="profile-box">
+                <img
+                    id="profileImage"
+                    src="profile.jpg"
+                    alt="My Profile Photo"
+                >
+
+                <button
+                    id="profileToggle"
+                    onclick="toggleProfile()"
+                >
+                    Hide Profile Image
+                </button>
+            </div>
+        </div>
+
+        <marquee>Welcome to My Resume!</marquee>
+        <hr>
+
+        <h2>1. Bio Information</h2>
+
+        <p><b>Name:</b> Sivaprakash M</p>
+
+        <p><b>Mobile:</b> 79******62</p>
+
+        <p>
+            <b>Email:</b>
+            <a href="mailto:sivaprakash@gmail.com">
+                sivaprakash@gmail.com
+            </a>
+        </p>
+
+        <p>
+            <b>LinkedIn:</b>
+            <a href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Visit LinkedIn
+            </a>
+        </p>
+
+        <h2>2. About Me</h2>
+
+        <p>
+            I’m a curious learner who loves turning ideas into reality
+            through code. I enjoy building projects, exploring new
+            technologies, and improving my skills one step at a time.
+        </p>
+
+        <h2>3. Career Objective</h2>
+
+        <p>
+            To begin my career in the IT field, improve my technical
+            knowledge, gain practical experience, and develop useful
+            software applications.
+        </p>
+
+        <h2>4. Educational Qualification</h2>
+
+        <table>
+            <tr>
+                <th>S.No</th>
+                <th>Qualification</th>
+                <th>Institution</th>
+                <th>Year</th>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>Schooling</td>
+                <td>Unity Matriculation School</td>
+                <td>2021</td>
+            </tr>
+
+            <tr>
+                <td>2</td>
+                <td>Higher Secondary</td>
+                <td>Vidya Mandir</td>
+                <td>2023</td>
+            </tr>
+
+            <tr>
+                <td>3</td>
+                <td>B.E</td>
+                <td>SA Engineering College</td>
+                <td>Present</td>
+            </tr>
+        </table>
+
+        <h2>5. Technical Skills</h2>
+
+        <ul>
+            <li>HTML - Beginner</li>
+            <li>CSS - Beginner</li>
+            <li>JavaScript - Learning</li>
+            <li>Node.js - Learning</li>
+        </ul>
+
+        <h2>6. Projects</h2>
+
+        <h3>Personal Resume Website</h3>
+
+        <p>
+            Created a personal resume using HTML and CSS. Learned
+            headings, paragraphs, tables, hyperlinks, colors, and borders.
+        </p>
+
+        <h3>Questify Quiz Game</h3>
+
+        <p>
+            Created a quiz game project to practise web development
+            and learn how interactive websites work.
+        </p>
+
+        <h2>7. Strengths</h2>
+
+        <ul>
+            <li>Quick learner</li>
+            <li>Hardworking</li>
+            <li>Problem-solving skills</li>
+            <li>Interest in technology</li>
+        </ul>
+
+        <h2>8. Hobbies</h2>
+
+        <ul>
+            <li>Learning programming</li>
+            <li>Creating websites</li>
+            <li>Exploring new technologies</li>
+            <li>Playing games</li>
+        </ul>
+
+        <h2>9. Declaration</h2>
+
+        <p>
+            I hereby declare that the information given above
+            is true to the best of my knowledge.
+        </p>
+
+        <hr>
+
+        <!-- Counter displayed at the bottom -->
+        <p id="clickCount" aria-live="polite">
+            Button clicks: 0
+        </p>
+
+        <footer>
+            <p>Thank You for Visiting My Resume!</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Switch between light and dark mode
+        function toggleTheme() {
+            document.body.classList.toggle("dark-mode");
+
+            const button = document.getElementById("themeToggle");
+
+            if (document.body.classList.contains("dark-mode")) {
+                button.textContent = " Light Mode";
+            } else {
+                button.textContent = " Dark Mode";
+            }
+        }
+
+        // Hide or show the profile image in the same place
+        function toggleProfile() {
+            const image = document.getElementById("profileImage");
+            const button = document.getElementById("profileToggle");
+
+            if (image.style.display === "none") {
+                image.style.display = "block";
+                button.textContent = "Hide Profile Image";
+            } else {
+                image.style.display = "none";
+                button.textContent = "Show Profile Image";
+            }
+        }
+
+        // Count button clicks and display the total at the bottom
+        let clickCount = 0;
+
+        function countClick() {
+            clickCount++;
+
+            document.getElementById("clickCount").textContent =
+                "Button clicks: " + clickCount;
+        }
+    </script>
+
+</body>
+</html>
